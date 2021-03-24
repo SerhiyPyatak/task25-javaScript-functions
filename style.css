@@ -1,0 +1,54 @@
+.taskform__taskunit {
+	display:		flex;
+	margin:			10px;
+}
+
+.taskform__taskunit:nth-child(odd) {
+	background-color:	lightyellow;
+}
+
+.taskform__taskunit > * {
+	cursor:				pointer;
+}
+
+#range-sets {
+	margin: 			0 15px;
+	display: 			none;
+}
+
+#compare-num:checked ~ #range-sets {
+	display: 			flex;
+	flex-direction: 	column;
+}
+
+#input-for-factorial {
+	margin: 			0 35px;
+	display: 			none;
+}
+
+#find-factorial:checked ~ #input-for-factorial {
+	display: 			flex;
+	flex-direction: 	column;
+}
+
+#square-sets {
+	margin: 			0 15px;
+	display: 			none;
+}
+
+#square-area:checked ~ #square-sets {
+	display: 			flex;
+	flex-direction: 	column;
+}
+
+
+label p {
+	margin: 			0 5px;
+}
+
+button {
+	margin: 			50px 50px;
+	cursor:				pointer;
+	height: 			40px;
+	width: 				140px;
+}

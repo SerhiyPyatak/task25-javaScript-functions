@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Тема 25: Функции в JavaScript</h1>
+    <form action="#" method="GET" class="taskform">
+      <fieldset class="taskform__taskunit" id="task1">
+        <legend>Задание №1</legend>
+        <input
+          type="radio"
+          id="compare-num"
+          name="task"
+          value="compareNumbers"
+        />
+        <label for="compare-num">
+          <p>
+            Написать функцию, которая принимает 2 числа и возвращает -1, если
+            первое меньше, чем второе; 1 – если первое больше, чем второе; и 0 –
+            если числа равны.
+          </p>
+        </label>
+        <fieldset id="range-sets">
+          <label for="range-start">Первое число:</label>
+          <input type="number" name="rangeStart" id="range-start" />
+          <label for="range-end">Второе число:</label>
+          <input type="number" name="rangeEnd" id="range-end" />
+        </fieldset>
+      </fieldset>
+      <fieldset class="taskform__taskunit" id="task2">
+        <legend>Задание №2</legend>
+        <input
+          type="radio"
+          id="find-factorial"
+          name="task"
+          value="findTheFactorial"
+        />
+        <label for="find-factorial">
+          <p>
+            Написать функцию, которая вычисляет факториал переданного ей числа.
+          </p>
+        </label>
+        <label for="input-for-factorial">
+          Введите число в появившемся поле:</label
+        >
+        <input
+          type="number"
+          name="inputForFactorial"
+          id="input-for-factorial"
+        />
+      </fieldset>
+      <fieldset class="taskform__taskunit" id="task3">
+        <legend>Задание №3</legend>
+        <input
+          type="radio"
+          id="concat-numbers"
+          name="task"
+          value="concatNumbers"
+        />
+        <label for="concat-numbers">
+          <p>
+            Написать функцию, которая принимает три отдельные цифры и превращает
+            их в одно число. Например: цифры 1, 4, 9 превратятся в число 149.
+          </p>
+        </label>
+      </fieldset>
+      <fieldset class="taskform__taskunit" id="task4">
+        <legend>Задание №4</legend>
+        <input type="radio" id="square-area" name="task" value="squareArea" />
+        <label for="square-area">
+          <p>
+            Написать функцию, которая принимает длину и ширину прямоугольника и
+            вычисляет его площадь. Если в функцию передали 1 параметр, то она
+            вычисляет площадь квадрата.
+          </p>
+        </label>
+        <fieldset id="square-sets">
+          <label for="square-width">Ширина:</label>
+          <input type="number" name="squareWidth" id="square-width" />
+          <label for="square-height">Длина:</label>
+          <input type="number" name="squareHeight" id="square-height" />
+        </fieldset>
+      </fieldset>
+      <fieldset class="taskform__taskunit" id="task5">
+        <legend>Задание №5</legend>
+        <input
+          type="radio"
+          id="perfect-number"
+          name="task"
+          value="perfectNumber"
+        />
+        <label for="perfect-number">
+          <p>
+            Написать функцию, которая проверяет, является ли переданное ей число
+            совершенным. Совершенное число – это число, равное сумме всех своих
+            собственных делителей.
+          </p>
+        </label>
+      </fieldset>
+      <fieldset class="taskform__taskunit" id="task6">
+        <legend>Задание №6</legend>
+        <input
+          type="radio"
+          id="perfects-range"
+          name="task"
+          value="perfectsRange"
+        />
+        <label for="perfects-range">
+          <p>
+            Написать функцию, которая принимает минимальное и максимальное
+            значения для диапазона, и выводит только те числа из диапазона,
+            которые являются совершенными. Используйте написанную ранее функцию,
+            чтобы узнавать, совершенное число или нет.
+          </p>
+        </label>
+      </fieldset>
+      <fieldset class="taskform__taskunit" id="task7">
+        <legend>Задание №7</legend>
+        <input
+          type="radio"
+          id="shift-digits"
+          name="task"
+          value="shiftTheDigits"
+        />
+        <label for="shift-digits">
+          <p>
+            Запросить у пользователя число и на сколько цифр его сдвинуть.
+            Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть
+            на 2 цифры, то получится 345612).
+          </p>
+        </label>
+      </fieldset>
+      <fieldset class="taskform__taskunit" id="task8">
+        <legend>Задание №8</legend>
+        <input type="radio" id="loop-week" name="task" value="loopTheWeek" />
+        <label for="loop-week">
+          <p>
+            Зациклить вывод дней недели таким образом: «День недели. Хотите
+            увидеть следующий день?» и так до тех пор, пока пользователь
+            нажимает OK.
+          </p>
+        </label>
+      </fieldset>
+      <fieldset class="taskform__taskunit" id="task9">
+        <legend>Задание №9</legend>
+        <input
+          type="radio"
+          id="multiplying-table"
+          name="task"
+          value="multiplyingTable"
+        />
+        <label for="multiplying-table">
+          <p>
+            Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число
+            необходимо умножить на числа от 1 до 10. (Обновите страницу чтоб
+            убрать таблицу)
+          </p>
+          <p id="mul-table"></p>
+        </label>
+      </fieldset>
+      <fieldset class="taskform__taskunit" id="task10">
+        <legend>Задание №10</legend>
+        <input
+          type="radio"
+          id="guess-number"
+          name="task"
+          value="guessTheNumber"
+        />
+        <label for="guess-number">
+          <p>
+            Игра «Угадай число». Предложить пользователю загадать число от 0 до
+            100 и отгадать его следующим способом: каждую итерацию цикла делите
+            диапазон чисел пополам, записываете результат в N и спрашиваете у
+            пользователя «Ваше число > N, < N или == N?». В зависимости от того,
+            что указал пользователь, уменьшаете диапазон. Начальный диапазон от
+            0 до 100, поделили пополам и получили 50. Если пользователь указал,
+            что его число > 50, то изменили диапазон на от 51 до 100. И так до
+            тех пор, пока пользователь не выберет == N.
+          </p>
+        </label>
+      </fieldset>
+      <button type="submit" onclick="processForm(this.form)">
+        Go Ahead >>
+      </button>
+    </form>
+    <button onclick="lessNumber()">Less Number</button>
+    <button onclick="powerNum()">Power Number</button>
+    <button onclick="isPrime()">Is Prime</button>
+    <button onclick="getRest()">Get Rest</button>
+    <button onclick="getSumma()">Get Sum</button>
+  </body>
+</html>
