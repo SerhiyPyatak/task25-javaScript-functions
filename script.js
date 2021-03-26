@@ -27,6 +27,18 @@ function isPerfectNum(usrNumber) {
 	}
 }
 
+function isPerfectNumRefactor(usrNumber) {
+	let sumDividers = 0;
+	for (let i = 0; i < usrNumber; i++) {
+		if(!(usrNumber % i)) sumDividers += i;
+	};
+	if (usrNumber == sumDividers) {
+		return true; 
+	} else {
+		return false;
+	}
+}
+
 function findAllDividers(num) {
 	let result = "1";
 	for (let i = 2; i <= num; i++) {
@@ -50,7 +62,7 @@ function getSquareArea(rectWidth, rectHeight) {
 function getPerfectsInRange(arrRange) {
 	let result = "";
 	for (let i = arrRange[0]; i <= arrRange[1]; i++) {
-		if (isPerfectNum(i)) {
+		if (isPerfectNumRefactor(i)) {
 			result = result + ' ' + i;
 		}
 	}
@@ -145,7 +157,7 @@ function processForm(oForm) {
 			break;
 		case "perfectNumber":
 			let val = +prompt(`Enter numeric value, please:`);
-			if (isPerfectNum(val)) {
+			if (isPerfectNumRefactor(val)) {
 				alert(`Yeap! This is perfect number!`);
 			} else {
 				alert(`Nope! This isn't perfect number!`);
