@@ -69,63 +69,30 @@ function getPerfectsInRange(arrRange) {
 	return result;
 }
 
-function digiShifter() {
-	const number = prompt("Type the number, please:");
-	const shift = prompt("Type amount of digits to shift:");
-	let outRes;
-	if(isFinite(parseInt(shift)) && (parseInt(shift) < number.length)) {
-		outRes = number.slice(shift) + number.slice(0, shift);
-		alert(`Your result is: ${outRes}`);
-	} else {
-		alert('Warning! Inappropriate shift!');
-	}
-};
-
-function weekdayLooper() {
-	let conTinue = true;
-	let i = 0;
-	const week = ['Sunday',
-				'Monday',
-				'Tuesday',
-				'Wednesday',
-				'Thursday',
-				'Friday',
-				'Saturday'
-				]
-	do {
-		conTinue = confirm(`Day ${week[i]}. Do you want to see the next day?`);
-		i++;
-		if (i > 6) i = 0;
-	} while (conTinue);
+function timeFormatter(hourValue = 0, minuteValue = 0, secondsValue = 0) {
+	const timeStamp = new Date();
+	timeStamp.setHours(hourValue, minuteValue, secondsValue);
+	return timeStamp.toLocaleTimeString('en-GB');
 }
 
-function multiPlicator(oText) {
-	for (let i = 2; i <= 9; i++) {
-		for (let j = 1; j <= 10; j++) {
-			oText.innerHTML += `${i} * ${j} = ${i * j}<br>`;
-		}
-		oText.lessNum().innerHTML += "-------------------<br>"
-	}
+function amountOfSeconds(hourValue = 0, minuteValue = 0, secondsValue = 0) {
+	return hourValue * 3600 + minuteValue * 60 + secondsValue;
 }
 
-function guessNumber() {
-	alert('Mind a number from 0 to 100, please!');
-	isContinue = true;
-	rangeFloor = 0;
-	rangeSilly = 100;
-	do {
-		let guess = rangeFloor + Math.round((rangeSilly - rangeFloor)/2);
-		if (confirm(`Is you guessed ${guess}?`)) {
-			isContinue = false;
-		} else {
-			if (confirm(`Is you guessed number greater than ${guess}?`)) {
-				rangeFloor = guess + 1;
-			} else {
-				rangeSilly = guess - 1;
-			}
-		};
-	} while (isContinue);
-	alert('TA - DA !!!!');
+function secondsToTimeStruct(secondAm) {
+	const hourAm = Math.trunc(secondAm / 3600);
+	const minuteAm = Math.trunc(secondAm - hourAm * 3600);
+	const timeStruct = new Date();
+	timeStruct.setHours (
+		hourAm,
+		minuteAm,
+		secondAm - hourAm * 3600 - minuteAm * 60
+	)
+	return timeStruct;
+}
+
+function dateDiff(startYear, startMonth, startDay, endYear, endMonth, endDay) {
+
 }
 
 function processForm(oForm) {
@@ -167,18 +134,35 @@ function processForm(oForm) {
 			const outRes = getPerfectsInRange(askNumbers(2));
 			alert(`Perfects are:\n ${outRes}`);
 			break;
-		case "shiftTheDigits":
-			digiShifter();
+		case "formatDDMMSS":
+			const timeVal = timeFormatter(
+				+oForm.elements.hourValue.value,
+				+oForm.elements.minuteValue.value,
+				+oForm.elements.secondsValue.value
+			);
+			alert(`Your timestamp is ${timeVal}`);
 			break;
-		case "loopTheWeek":
-			weekdayLooper();
+		case "calcTheSeconds":
+			const timeVal1 = amountOfSeconds(
+				+oForm.elements.hourValue1.value,
+				+oForm.elements.minuteValue1.value,
+				+oForm.elements.secondsValue1.value
+			);
+			alert(`Amount of seconds is ${timeVal1}`);
 			break;
-		case "multiplyingTable":
-			let text = document.getElementById('mul-table');
-			multiPlicator(text);
+		case "convertSeconds":
+			let secAmount = +prompt('Type amount of seconds please:');
+			let timeStruct = secondsToTimeStruct(secAmount);
+			alert (`In your case it will be: ${timeStruct.toLocaleTimeString('en-GB')}`);
 			break;
-		case "guessTheNumber":
-			guessNumber();
+		case "substractDates":
+			/*const startDate = new Date(oForm.elements.dateDiffStart.value);
+			const endDate = new Date(oForm.elements.dateDiffEnd.value);
+			const microSecondsDiff = Math.abs(startDate - endDate);
+			const secondsDiff = Math.round(microSecondsDiff / 1000);
+			const resolvingStruct = secondsToTimeStruct(secondsDiff);
+			alert (`Difference is: ${resolvingStruct.toLocaleTimeString('en-GB')}`);*/
+			alert('I can\'t understand this task. It seems result will always be 00:00:00 :(')
 			break;
 	}
 }

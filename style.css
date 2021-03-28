@@ -41,6 +41,43 @@
 	flex-direction: 	column;
 }
 
+#format-time > p {
+	width: 				60%;
+}
+
+#time-components {
+	display: 			none;
+}
+
+#format-time:checked ~ #time-components {
+	display:			flex;
+	gap: 				5px;
+	width: 				20%;
+}
+
+#time-components-seconds {
+	display: 			none;
+}
+
+#calc-seconds:checked ~ #time-components-seconds {
+	display:			flex;
+	gap: 				5px;
+	width: 				20%;
+}
+
+#difference-calendars {
+	display:			none;
+}
+
+#date-difference:checked ~ #difference-calendars {
+	display: 			flex;
+	flex-direction: 	column;
+}
+
+.time-component {
+	display: 			flex;
+	flex-direction: 	column;
+}
 
 label p {
 	margin: 			0 5px;
